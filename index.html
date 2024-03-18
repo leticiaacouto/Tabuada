@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="imagex/png" href="icone.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel = "stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
+    <title>Tabuada</title>
+</head>
+<body>
+    
+  <div id="container">
+    <h1 >Gerador de Tabuada</h1>
+      <input type="number" id="numInput" placeholder="Digite um número">
+      <button onclick="geradorTabuada()">Gerar Tabuada</button>
+      <div class="gerador" id="tabuada"></div>
+  </div>
+
+<footer>
+ 
+  <div class="container1 pt-4">
+    <section class="mb-4">
+      
+      <!-- Instagram -->
+      <a
+        data-mdb-ripple-init
+        class="btn btn-link btn-floating btn-lg text-body m-1"
+        href="https://www.instagram.com/leticiaa.coutto/"
+        role="button"
+        data-mdb-ripple-color="dark"><i class="fab fa-instagram"></i></a>
+
+      <!-- Linkedin -->
+      <a
+        data-mdb-ripple-init
+        class="btn btn-link btn-floating btn-lg text-body m-1"
+        href="https://www.linkedin.com/in/leticiacoutom/"
+        role="button"
+        data-mdb-ripple-color="dark"><i class="fab fa-linkedin"></i></a>
+
+      <!-- Github -->
+      <a data-mdb-ripple-init class="btn btn-link btn-floating btn-lg text-body m-1"href="https://github.com/leticiaacouto"role="button"data-mdb-ripple-color="dark"><i class="fab fa-github"></i></a>
+    </section>
+  </div>
+
+  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);"> © 2024 Letícia Couto.M
+  </div>
+     
+</footer>
+
+
+    <script>
+
+        function geradorTabuada() {
+            var numInput = document.getElementById("numInput").value;
+            var tabuadaDiv = document.getElementById("tabuada");
+            tabuadaDiv.innerHTML = "";
+
+            if (!numInput || isNaN(numInput)) {
+                tabuadaDiv.innerHTML = "";
+                return;
+            }
+            
+            var tableHTML = "<h3>Tabuada do: " + numInput + "</h3><table border='1' ><tr><th>Número</th><th>Resultado</th></tr>";
+            
+            for (var i = 1; i <= 10; i++) {
+                tableHTML += "<tr><td>" + numInput + " x " + i + "</td><td>" + (numInput * i) + "</td></tr>";
+            }
+
+            tableHTML += "</table>";
+            tabuadaDiv.innerHTML = tableHTML;
+        }
+    </script>
+</body>
+</html>
